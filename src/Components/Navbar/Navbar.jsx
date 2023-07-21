@@ -15,7 +15,7 @@ const Navbar = () => {
         <li className="text-xl font-semibold"><Link to='/'>My Collage</Link></li>
         
         {
-            user? <> <li className="text-xl font-semibold"><Link to={`/profile/${user?.email}`}>{user.displayName}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
+            user? <> <li className="text-xl font-semibold"><Link to={'/profile'}>{user.displayName}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
         }
         {/* If user not available then show login button otherwise show Full Name + Logout Button */}
     </>

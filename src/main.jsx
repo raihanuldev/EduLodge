@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -8,6 +8,8 @@ import ErrorPage from './Components/Error/ErrorPage'
 import Login from './Pages/Login/Login'
 import SingUp from './Pages/SingUp/SingUp'
 import AuthProvider from './Provider/AuthProvider'
+import Profile from './Pages/Profile/Profile'
+
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <SingUp></SingUp>
+      },
+      {
+        path: `/profile`,
+        element:<Profile></Profile>
       }
 
     ]
