@@ -8,6 +8,7 @@ const Navbar = () => {
         <li className="text-xl font-semibold"><Link to='/'>Collages</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>Admission</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>My Collage</Link></li>
+        <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>`Raihan Sharif`</Link></li>
         {/* If user not available then show login button otherwise show Full Name + Logout Button */}
     </>
