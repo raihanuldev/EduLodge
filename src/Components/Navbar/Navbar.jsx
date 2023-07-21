@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContex } from "../../Provider/AuthProvider";
 
 
 const Navbar = () => {
+    const {user,logout} = useContext(AuthContex);
+
+
     const items = <>
         <li className="text-xl font-semibold"><Link to='/'>Home</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>Collages</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>Admission</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>My Collage</Link></li>
-        <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
-        <li className="text-xl font-semibold"><Link to='/'>`Raihan Sharif`</Link></li>
+        
+        {
+            user? <> <li className="text-xl font-semibold"><Link to={`/profile/${user?.email}`}>{user.displayName}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
+        }
         {/* If user not available then show login button otherwise show Full Name + Logout Button */}
     </>
     return (
