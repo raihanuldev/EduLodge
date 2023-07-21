@@ -43,7 +43,7 @@ const Login = () => {
                         <input  {...register("password", { required: true })} type="text" placeholder="PassWord" className="input input-bordered" />
                     </div>
                     <div className="flex">
-                        <p><small>Forget Password?</small></p>
+                        <p><small> <Link to='/forget-password'>Forget Password?</Link> </small></p>
                         <p className="flex justify-end"><small><Link to='/register'>Are you new?</Link></small></p>
                     </div>
                     <button className="btn btn-secondary">Login</button>

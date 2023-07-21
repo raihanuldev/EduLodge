@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login'
 import SingUp from './Pages/SingUp/SingUp'
 import AuthProvider from './Provider/AuthProvider'
 import Profile from './Pages/Profile/Profile'
+import ForgetPassword from './Pages/ForgetPassword/ForgetPassword'
 
 
 const router = createBrowserRouter([
@@ -30,8 +31,12 @@ const router = createBrowserRouter([
         element: <SingUp></SingUp>
       },
       {
-        path: `/profile`,
+        path: '/profile',
         element:<Profile></Profile>
+      },
+      {
+        path:'/forget-password',
+        element: <ForgetPassword></ForgetPassword>
       }
 
     ]
