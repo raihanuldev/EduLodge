@@ -13,7 +13,7 @@ const Social = () => {
         googleSign()
         .then(data=>{
             const loggedUser = data.user;
-            const user = { name: loggedUser.displayName, photoUrL:loggedUser.photoURL, email: loggedUser.email,firebase: data.user.metadata}
+            const user = { name: loggedUser.displayName, address:'',university:'',photoUrL:loggedUser.photoURL, email: loggedUser.email,firebase: data.user.metadata}
             fetch('http://localhost:5000/users', {
                 method: 'post',
                 headers: {

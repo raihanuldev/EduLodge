@@ -16,7 +16,7 @@ const SingUp = () => {
             // console.log(result);
             userProfileUpdate(data.name,data.photo)
             .then(()=>{
-                const user = {name:data.name,email:data.email, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
+                const user = {name:data.name,address:'',university:'', email:data.email, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
                 fetch('http://localhost:5000/users',{
                             method:'post',
                             headers:{
