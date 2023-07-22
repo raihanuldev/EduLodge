@@ -1,7 +1,11 @@
 import Rating from "react-rating";
+import { Link } from 'react-router-dom'
+
 
 const Collage = ({collage}) => {
-    const {image,collegeName,admissionDates,ratings,research} = collage;
+    const {image,collegeName,admissionDates,ratings,research,_id} = collage;
+
+    
     return (
         <div className="card sm:mx-5 lg:card-side bg-base-100 my-2 rounded-lg shadow-sm">
                 <img src={image} className="p-2 sm:mx-auto w-[318px] "  alt="Album" />
@@ -19,7 +23,7 @@ const Collage = ({collage}) => {
                     /> <span className='text-xl font-semibold'>{ratings}</span>
                 </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">View Details</button>
+                        <Link to={`/collages/${_id}`} className="btn btn-primary">View Details</Link>
                     </div>
                 </div>
             </div>
