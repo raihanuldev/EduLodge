@@ -1,14 +1,39 @@
 import { useContext } from "react";
 import { FaGoogle, FaFacebookSquare } from "react-icons/fa";
 import { AuthContex } from "../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Social = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const {googleSign,fbLogin} = useContext(AuthContex);
     const handleGoogle =()=>{
         googleSign()
         .then(data=>{
-            console.log(data.user);
+            const loggedUser = data.user;
+            const user = { name: loggedUser.displayName, photoUrL:loggedUser.photoURL, email: loggedUser.email,firebase: data.user.metadata}
+            fetch('http://localhost:5000/users', {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+                .then(res => res.json())
+                .then(()=>{
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'SingUp Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    navigate(from,{replace:true})
+                })
         })
+        
         .catch(error=>{
             console.log(error);
         })

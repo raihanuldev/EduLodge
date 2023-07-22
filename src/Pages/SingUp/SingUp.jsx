@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Social from "../../Components/Social/Social";
 import { useContext } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+
 const SingUp = () => {
+    const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
     const {createUser,userProfileUpdate} = useContext(AuthContex);
     const onSubmit = data => {
@@ -14,16 +16,27 @@ const SingUp = () => {
             // console.log(result);
             userProfileUpdate(data.name,data.photo)
             .then(()=>{
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Thanks For Creating Account',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                // console.log('This is Updated Result:', result.user);
-                const user = {name:data.name,email:data.email,role:data.role, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
-                console.log('This is Redy for go on Database: ',user);
+                const user = {name:data.name,email:data.email, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
+                fetch('http://localhost:5000/users',{
+                            method:'post',
+                            headers:{
+                                'content-type':'application/json'
+                            },
+                            body:JSON.stringify(user)   
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'SingUp Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+                                }
+                            })
 
             })
         })
