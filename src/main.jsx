@@ -11,6 +11,9 @@ import AuthProvider from './Provider/AuthProvider'
 import Profile from './Pages/Profile/Profile'
 import ForgetPassword from './Pages/ForgetPassword/ForgetPassword'
 import EditProfile from './Pages/Profile/EditProfile'
+import Collages from './Pages/Collages/Collages'
+import Admission from './Pages/Admission/Admission'
+import MyCollages from './Pages/MyCollages/MyCollages'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
       {
         path:'/edit-profile',
         element: <EditProfile></EditProfile>
+      },
+      {
+        path:'/collages',
+        element: <Collages></Collages>
+      },
+      {
+        path:"/admission",
+        element:<Admission></Admission>
+      },
+      {
+        path:"/my-collages",
+        element: <MyCollages></MyCollages>
       }
 
     ]

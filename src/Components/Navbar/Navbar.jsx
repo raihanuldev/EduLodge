@@ -17,9 +17,9 @@ const Navbar = () => {
     }, [user])
     const items = <>
         <li className="text-xl font-semibold"><Link to='/'>Home</Link></li>
-        <li className="text-xl font-semibold"><Link to='/'>Collages</Link></li>
-        <li className="text-xl font-semibold"><Link to='/'>Admission</Link></li>
-        <li className="text-xl font-semibold"><Link to='/'>My Collage</Link></li>
+        <li className="text-xl font-semibold"><Link to='/collages'>Collages</Link></li>
+        <li className="text-xl font-semibold"><Link to='admission/'>Admission</Link></li>
+        <li className="text-xl font-semibold"><Link to='/my-collages'>My Collage</Link></li>
         
         {
             user? <> <li className="text-xl font-semibold"><Link to={'/profile'}>{profile?.name}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
