@@ -7,6 +7,7 @@ const ForgetPassword = () => {
     const {resetPass} = useContext(AuthContex);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        console.log(data.email);
         resetPass(data.email)
             .then(result => {
                 Swal.fire({
@@ -24,14 +25,14 @@ const ForgetPassword = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='card-body bg-base-200 '>
-                <div className="form-control w-1/4 text-center justify-center">
+            <div className='card-body bg-base-200 md:w-1/4 mx-auto my-5 rounded-2xl '>
+                <div className="form-control text-center justify-center">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
                     <input  {...register("email", { required: true })} type="email" placeholder="email" className="input input-bordered" />
                 </div>
-                <button className='btn btn-sm btn-outline w-1/4'>Reset Password</button>
+                <button className='btn btn-sm btn-outline'>Reset Password</button>
             </div>
         </form>
     );

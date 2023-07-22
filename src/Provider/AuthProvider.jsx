@@ -40,9 +40,9 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth,facebookProvider)
     }
     // forgetPass
-    const resetPass =() =>{
+    const resetPass =(email) =>{
         setLoading(true);
-        return sendPasswordResetEmail(email)
+        return sendPasswordResetEmail(auth,email)
     }
     useEffect(() => {
         const unsubscrive = onAuthStateChanged(auth, currentUser => {
