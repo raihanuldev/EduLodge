@@ -28,7 +28,7 @@ const Profile = () => {
             <div>
                 <div className="avatar ml-10 my-4">
                     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={user?.photoUrl}/>
+                        <img src={profile?.photoUrl} alt="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png" />
                     </div>
                 </div>
                 <div className="ml-3">
