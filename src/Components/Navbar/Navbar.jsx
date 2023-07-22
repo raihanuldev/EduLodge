@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 
 
 const Navbar = () => {
     const {user,logout} = useContext(AuthContex);
+    const [profile,setProfile] = useState();
 
-
+    useEffect(()=>{
+        fetch(`http://localhost:5000/user?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setProfile(data);
+            })
+    }, [user])
     const items = <>
         <li className="text-xl font-semibold"><Link to='/'>Home</Link></li>
         <li className="text-xl font-semibold"><Link to='/'>Collages</Link></li>
@@ -15,7 +22,7 @@ const Navbar = () => {
         <li className="text-xl font-semibold"><Link to='/'>My Collage</Link></li>
         
         {
-            user? <> <li className="text-xl font-semibold"><Link to={'/profile'}>{user.displayName}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
+            user? <> <li className="text-xl font-semibold"><Link to={'/profile'}>{profile.name}</Link></li> <li className="text-xl font-semibold"><Link onClick={logout}>Logout</Link></li> </> : <li className="text-xl font-semibold"><Link to='/login'>Login</Link></li>
         }
         {/* If user not available then show login button otherwise show Full Name + Logout Button */}
     </>
