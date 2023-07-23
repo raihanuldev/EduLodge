@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 
-import { useParams ,useNavigate } from "react-router-dom";
+import { useParams ,useNavigate, useLocation } from "react-router-dom";
 import { AuthContex } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Apply = () => {
+    const locations = useLocation();
+    const collage = locations.state;
+    console.log(collage);
     const navigate = useNavigate();
     const {user,loading} = useContext(AuthContex);
     const { id } = useParams();
     const { register, handleSubmit } = useForm();
 
     const onSubmit =(data)=>{
-        const application = {collage:id, name:data.names,address:data.address,photo:data.photo, birth:data.birthdate, subject:data.subject,email:data.email,phone:data.phone};
+        const application = {collageId:id, collageInfo:collage, name:data.names,address:data.address,photo:data.photo, birth:data.birthdate, subject:data.subject,email:data.email,phone:data.phone};
         // console.log(application);
         fetch('http://localhost:5000/admissions',{
             method: "POST",

@@ -9,7 +9,7 @@ const SImpleCollage = ({ collage, index }) => {
             <div className="card-body">
                 <h2 className="card-title text-2xl">{collegeName}</h2>
                 <div className="card-actions justify-end">
-                    <Link to={`/collage-admission/${_id}`} className="btn btn-primary ">Apply</Link>
+                    <Link to={`/collage-admission/${_id}`} state={collage} className="btn btn-primary ">Apply</Link>
                 </div>
             </div>
         </div>
