@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import {AuthContex} from '../../Provider/AuthProvider'
+import SImpleCollage from './SimpleCollage/SImpleCollage';
 
 const Admission = () => {
+    const { loading } = useContext(AuthContex)
+    const [collages, setCollages] = useState(null) 
+
+    useEffect(() => {
+        fetch('http://localhost:5000/all-collages')
+            .then(res => res.json())
+            .then(data => {
+                setCollages(data)
+            })
+    }, [])
+
+    if (loading || collages === null) {
+        return <span className="loading loading-bars loading-md"></span>
+    }
     return (
         <div>
-            this is admission page
+            <h2 className='text-2xl font-serif font-semibold text-center my-3'>Apply for Admission Your choose</h2>
+            <div>
+                {collages.map((collage,index)=> <SImpleCollage index={index} key={index} collage={collage}></SImpleCollage>)}
+            </div>
         </div>
     );
 };

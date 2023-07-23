@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Collage = ({collage}) => {
     const {image,collegeName,admissionDates,ratings,research,_id} = collage;
-
+    
     
     return (
         <div className="card sm:mx-5 lg:card-side bg-base-100 my-2 rounded-lg shadow-sm">

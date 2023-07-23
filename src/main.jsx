@@ -15,6 +15,7 @@ import Collages from './Pages/Collages/Collages'
 import Admission from './Pages/Admission/Admission'
 import MyCollages from './Pages/MyCollages/MyCollages'
 import CollageDetails from './Pages/CollageDetails/CollageDetails'
+import Apply from './Pages/Admission/Apply/Apply'
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path:"/admission",
         element:<Admission></Admission>
+      },
+      {
+        path:'/collage-admission/:id',
+        element: <Apply></Apply>
       },
       {
         path:"/my-collages",
