@@ -20,7 +20,7 @@ const Profile = () => {
     }, [user])
 
     if (loading) {
-        return <div>loading..........</div>
+        return <span className="loading loading-bars loading-md"></span>
     }
     return (
         <div className="bg-base-300 mx-4 rounded-lg">

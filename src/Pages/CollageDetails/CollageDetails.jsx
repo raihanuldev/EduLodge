@@ -17,7 +17,7 @@ const CollageDetails = () => {
             })
     }, [id])
     if (loading || collage === null) {
-        return <div>Loading..........</div>;
+        return <span className="loading loading-bars loading-md"></span>;
     }
 
     const { image, collegeName, admissionDates, ratings, research, _id, process, events, works, researchHistory, sports, } = collage;

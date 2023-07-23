@@ -4,7 +4,7 @@ import Collage from './Collage';
 
 const Collages = () => {
     const { loading } = useContext(AuthContex)
-    const [collages, setCollages] = useState([]) 
+    const [collages, setCollages] = useState(null) 
 
     useEffect(() => {
         fetch('http://localhost:5000/all-collages')
@@ -14,8 +14,8 @@ const Collages = () => {
             })
     }, [])
 
-    if (loading) {
-        return <div>Loading..........</div>
+    if (loading || collages === null) {
+        return <span className="loading loading-bars loading-md"></span>
     }
 
     return (
