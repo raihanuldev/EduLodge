@@ -16,6 +16,7 @@ import Admission from './Pages/Admission/Admission'
 import MyCollages from './Pages/MyCollages/MyCollages'
 import CollageDetails from './Pages/CollageDetails/CollageDetails'
 import Apply from './Pages/Admission/Apply/Apply'
+import ResearchDetails from './Pages/Home/Research/ResearchDetails/ResearchDetails'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path:'/research-paper/:id',
+        element: <ResearchDetails></ResearchDetails>
       },
       {
         path: '/login',
