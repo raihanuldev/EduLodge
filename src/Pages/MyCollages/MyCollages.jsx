@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../Provider/AuthProvider';
 import Rating from 'react-rating';
 import { BsStarHalf, BsStar, BsStarFill } from "react-icons/bs";
+import Swal from 'sweetalert2';
 
 const MyCollages = () => {
     const { user, loading } = useContext(AuthContex)
@@ -12,7 +13,24 @@ const MyCollages = () => {
     const { collageId, name, phone, subject, collageInfo, address } = application;
     const handleFeedback =()=>{
         const review ={name:user?.displayName,feedback:feedback, image:user?.photoURL,ratings:rating}
-        console.log(review);
+        // console.log(review);
+        fetch('http://localhost:5000/reviews',{
+            method:"POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(review),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Feedback Sent Successfully',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
     }
     useEffect(() => {
         fetch(`http://localhost:5000/applications?email=${user?.email}`)
