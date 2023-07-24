@@ -1,6 +1,8 @@
 import { Link, useRouteError } from 'react-router-dom'
+import useTitle from '../../hooks/useTitle';
 
 const ErrorPage = () => {
+  useTitle('404 || EduLodge')
   const { error, status } = useRouteError()
   // console.log(error);
   return (

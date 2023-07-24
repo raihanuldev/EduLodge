@@ -3,8 +3,10 @@ import FeautureImg from './FeautureImg/FeautureImg';
 import Reviews from './Reviews/Reviews';
 import Research from './Research/Research';
 import TopCollage from './TopCollage';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home || EduLodge')
     return (
         <div>
             <TopCollage></TopCollage>

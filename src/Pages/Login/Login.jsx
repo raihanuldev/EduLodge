@@ -4,7 +4,10 @@ import Social from "../../Components/Social/Social";
 import { useContext } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from '../../hooks/useTitle';
+
 const Login = () => {
+    useTitle('Login || EduLodge')
     const { register, handleSubmit } = useForm();
     const {LoginUser} = useContext(AuthContex);
     const onSubmit = data => {

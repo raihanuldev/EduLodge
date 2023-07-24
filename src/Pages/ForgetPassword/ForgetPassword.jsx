@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContex } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle'
 
 const ForgetPassword = () => {
+    useTitle('Forget Password || EduLodge')
     const {resetPass} = useContext(AuthContex);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {

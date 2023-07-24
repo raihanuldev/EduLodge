@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../Provider/AuthProvider';
 import Collage from './Collage';
+import useTitle from '../../hooks/useTitle'
 
 const Collages = () => {
+    useTitle('Collages || EduLodge')
     const { loading } = useContext(AuthContex)
     const [collages, setCollages] = useState(null) 
 

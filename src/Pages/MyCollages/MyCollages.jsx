@@ -3,8 +3,10 @@ import { AuthContex } from '../../Provider/AuthProvider';
 import Rating from 'react-rating';
 import { BsStarHalf, BsStar, BsStarFill } from "react-icons/bs";
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle'
 
 const MyCollages = () => {
+    useTitle('My Collage')
     const { user, loading } = useContext(AuthContex)
     const [application, setApplications] = useState({});
     const [feedback, setFeedback] = useState(''); // State to store the value of the textarea

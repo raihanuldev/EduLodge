@@ -1,7 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import useTitle from '../../hooks/useTitle';
+
 const Profile = () => {
+    useTitle('Profile || EduLodge')
     const navigate = useNavigate()
     const { user, loading } = useContext(AuthContex);
     const [profile, setProfile] = useState();

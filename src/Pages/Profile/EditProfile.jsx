@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const EditProfile = () => {
+    useTitle('Edit-Profile')
     const { register, handleSubmit } = useForm();
     const { user, loading } = useContext(AuthContex);
     const [profile, setProfile] = useState();

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const SImpleCollage = ({ collage, index }) => {
+    
     const { collegeName,_id } = collage || [];
     
     return (
