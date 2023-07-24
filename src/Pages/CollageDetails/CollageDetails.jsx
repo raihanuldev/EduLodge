@@ -10,7 +10,7 @@ const CollageDetails = () => {
 
 
     useEffect(() => {
-        fetch(`https://edu-lodge-server.vercel.app/details/${id}`)
+        fetch(`https://collage-server-two.vercel.app/details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setCollage(data);

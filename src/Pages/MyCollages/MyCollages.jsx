@@ -16,7 +16,7 @@ const MyCollages = () => {
     const handleFeedback = () => {
         const review = { name: user?.displayName, feedback: feedback, image: user?.photoURL, ratings: rating }
         // console.log(review);
-        fetch('https://edu-lodge-server.vercel.app/reviews', {
+        fetch('https://collage-server-two.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const MyCollages = () => {
             })
     }
     useEffect(() => {
-        fetch(`https://edu-lodge-server.vercel.app/applications?email=${user?.email}`)
+        fetch(`https://collage-server-two.vercel.app/applications?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setApplications(data);

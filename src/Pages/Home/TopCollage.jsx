@@ -9,7 +9,7 @@ const TopCollage = () => {
 
     const handleSearch = () => {
         // Fetch data based on the search field value
-        fetch(`https://edu-lodge-server.vercel.app/search-collages?query=${searchFiled}`)
+        fetch(`https://collage-server-two.vercel.app/search-collages?query=${searchFiled}`)
             .then(res => res.json())
             .then(data => {
                 setSearchData(data);
@@ -17,7 +17,7 @@ const TopCollage = () => {
     }
 
     useEffect(() => {
-        fetch('https://edu-lodge-server.vercel.app/all-collages')
+        fetch('https://collage-server-two.vercel.app/all-collages')
             .then(res => res.json())
             .then(data => {
                 setDefult(data)

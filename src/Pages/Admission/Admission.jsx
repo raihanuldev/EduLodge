@@ -9,7 +9,7 @@ const Admission = () => {
     const [collages, setCollages] = useState(null) 
 
     useEffect(() => {
-        fetch('https://edu-lodge-server.vercel.app/all-collages')
+        fetch('https://collage-server-two.vercel.app/all-collages')
             .then(res => res.json())
             .then(data => {
                 setCollages(data)
