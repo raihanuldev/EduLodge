@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 
@@ -37,11 +36,8 @@ const Navbar = () => {
                         {items}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">EduLodge</a>
-                <div className="flex">
-                    <input type="text" className="input" placeholder="Search Collage Name" />
-                    <button className="btn btn-primary ml-2"> <FaSearch></FaSearch> </button>
-                </div>
+                <a className="btn btn-ghost normal-case text-2xl font-serif">EduLodge</a>
+                
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
