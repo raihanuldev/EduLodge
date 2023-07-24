@@ -8,7 +8,7 @@ const Social = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const {googleSign,fbLogin} = useContext(AuthContex);
+    const {googleSign,fbLogin,loading} = useContext(AuthContex);
     const handleGoogle =()=>{
         googleSign()
         .then(data=>{
@@ -46,6 +46,9 @@ const Social = () => {
         .catch(error=>{
             console.log(error.message);
         })
+    }
+    if(loading){
+        return <span className="loading loading-bars loading-md"></span>
     }
     return (
         <div>

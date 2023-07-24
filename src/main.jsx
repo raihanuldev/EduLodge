@@ -17,6 +17,7 @@ import MyCollages from './Pages/MyCollages/MyCollages'
 import CollageDetails from './Pages/CollageDetails/CollageDetails'
 import Apply from './Pages/Admission/Apply/Apply'
 import ResearchDetails from './Pages/Home/Research/ResearchDetails/ResearchDetails'
+import PrivateRoute from './Provider/PrivateRoute'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/research-paper/:id',
-        element: <ResearchDetails></ResearchDetails>
+        element:<ResearchDetails></ResearchDetails>
       },
       {
         path: '/login',
@@ -46,11 +47,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element:<Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
         path:'/edit-profile',
-        element: <EditProfile></EditProfile>
+        element: <PrivateRoute><EditProfile></EditProfile></PrivateRoute>
       },
       {
         path:'/collages',
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/collages/:id',
-        element:<CollageDetails></CollageDetails>
+        element:<PrivateRoute><CollageDetails></CollageDetails></PrivateRoute>
       },
       {
         path:"/admission",
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/my-collages",
-        element: <MyCollages></MyCollages>
+        element: <PrivateRoute><MyCollages></MyCollages></PrivateRoute>
       }
 
     ]
