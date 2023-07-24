@@ -8,7 +8,7 @@ const Navbar = () => {
     const [profile,setProfile] = useState();
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        fetch(`https://edu-lodge-server.vercel.app/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);

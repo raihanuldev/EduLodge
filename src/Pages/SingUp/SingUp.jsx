@@ -19,7 +19,7 @@ const SingUp = () => {
             userProfileUpdate(data.name,data.photo)
             .then(()=>{
                 const user = {name:data.name,address:'',university:'', email:data.email, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
-                fetch('http://localhost:5000/users',{
+                fetch('https://edu-lodge-server.vercel.app/users',{
                             method:'post',
                             headers:{
                                 'content-type':'application/json'
