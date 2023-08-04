@@ -37,21 +37,23 @@ const EditProfile = () => {
             })
             .then(data => {
                 // Handle the response data as needed (e.g., show success message)
-                // console.log('Profile updated successfully:', data);
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
                     title: 'Profile Updated Successfully',
                     showConfirmButton: false,
                     timer: 1500
-                })
+                });
             })
             .catch(error => {
+                // Handle the error and show an error message to the user
                 console.error('Error updating profile:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'An error occurred while updating the profile!',
+                });
             });
-
-
-
     };
 
     useEffect(() => {
