@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 bg-[#a0d1ff] text-base-content">
             <div>
                 <span className="footer-title">Services</span>
                 <a className="link link-hover">Branding</a>
@@ -30,7 +30,7 @@ const Footer = () => {
                         <span className="label-text">Enter your email address</span>
                     </label>
                     <div className="relative">
-                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
+                        <input type="text" placeholder="username@site.com" className="input bg-[#b8d6f3] input-bordered w-full pr-16" />
                         <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                     </div>
                 </div>

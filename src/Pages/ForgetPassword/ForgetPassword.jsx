@@ -27,7 +27,7 @@ const ForgetPassword = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='card-body bg-base-200 md:w-1/4 mx-auto my-5 rounded-2xl '>
+            <div className='card-body bg-[#9dc1e4] md:w-1/4 mx-auto my-5 rounded-2xl '>
                 <div className="form-control text-center justify-center">
                     <label className="label">
                         <span className="label-text">Email</span>

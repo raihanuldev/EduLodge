@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* If user not available then show login button otherwise show Full Name + Logout Button */}
     </>
     return (
-        <div className="navbar bg-base-200 shadow-md px-5">
+        <div className="navbar bg-[#7ab6ee] shadow-md px-5 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

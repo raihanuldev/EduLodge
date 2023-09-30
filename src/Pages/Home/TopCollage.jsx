@@ -24,9 +24,9 @@ const TopCollage = () => {
             })
     }, [])
     return (
-        <div>
+        <div className=''>
             <div className="flex w-2/3 mx-auto">
-                <input type="text" onChange={(e) => setSearchFiled(e.target.value)} className="input my-4 w-full bg-base-200" placeholder="Search Collage Name" />
+                <input type="text" onChange={(e) => setSearchFiled(e.target.value)} className="input my-4 w-full bg-[#bfcdda] " placeholder="Search Collage Name" />
                 <button onClick={handleSearch} className="btn btn-outline ml-2 mt-4"> <FaSearch></FaSearch> </button>
             </div>
             <h2 className='text-center text-3xl font-semibold'>Top Collage</h2>
