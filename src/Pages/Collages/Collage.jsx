@@ -7,7 +7,7 @@ const Collage = ({collage}) => {
     
     
     return (
-        <div className="card sm:mx-5 lg:card-side bg-base-100 my-2 rounded-lg shadow-sm">
+        <div className="card sm:mx-5 lg:card-side bg-[#cbe6ff] my-2 rounded-lg shadow-sm">
                 <img src={image} className="p-2 sm:mx-auto w-[318px] "  alt="Album" />
                 <div className="card-body ">
                     <h2 className="card-title">{collegeName}</h2>

@@ -6,7 +6,7 @@ const SImpleCollage = ({ collage, index }) => {
     const { collegeName,_id } = collage || [];
     
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl my-2 mx-4">
+        <div className="card lg:card-side bg-[#cbe6ff] shadow-xl my-2 mx-4">
             <div className="card-body">
                 <h2 className="card-title text-2xl">{collegeName}</h2>
                 <div className="card-actions justify-end">
