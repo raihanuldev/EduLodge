@@ -48,7 +48,7 @@ const SingUp = () => {
         
     };
     return (
-        <div className="bg-base-200 mx-auto sm:w-1/3 p-5 my-4 rounded-3xl">
+        <div className="bg-[#a4c5e4] mx-auto sm:w-1/3 p-5 my-4 rounded-3xl">
             <img src="https://i.ibb.co/s3zpqtF/n-PAR3y23-400x400-removebg-preview.png" alt="techzoxne-1" className='rounded-lg p-5 w-[250px] ' />
             <p className="text-3xl ">Welcome for Joining With Us </p>
             <form  onSubmit={handleSubmit(onSubmit)}>

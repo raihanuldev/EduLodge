@@ -22,7 +22,7 @@ const CollageDetails = () => {
 
     const { image, collegeName, admissionDates, ratings, research, _id, process, events, works, researchHistory, sports, } = collage;
     return (
-        <div className='bg-base-300 m-2 rounded-lg p-2'>
+        <div className='bg-[#c6e4ff] m-2 rounded-lg p-2'>
             <h2 className='text-2xl font-serif font-semibold text-center'>More Details About {collegeName}</h2>
             <div className='grid md:grid-cols-2'>
                 <img src={image} className='mx-[70px] sm:mx-5' alt="" />

@@ -26,7 +26,7 @@ const Profile = () => {
         return <span className="loading loading-bars loading-md"></span>
     }
     return (
-        <div className="bg-base-300 mx-4 rounded-lg">
+        <div className="bg-[rgb(183,220,255)] mx-4 rounded-lg">
             <p className="text-center text-2xl font-semibold my-2">Welcome to {profile?.name} Profile.</p>
             <div>
                 <div className="avatar ml-10 my-4">

@@ -64,7 +64,7 @@ const EditProfile = () => {
             })
     }, [user])
     return (
-        <div className="bg-base-200 mx-auto sm:w-1/3 p-5 my-4 rounded-3xl">
+        <div className="bg-[#a7d0f7] mx-auto sm:w-1/3 p-5 my-4 rounded-3xl">
 
             <p className="text-3xl ">Update Your Informations</p>
             <form onSubmit={handleSubmit(onSubmit)}>
