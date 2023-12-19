@@ -16,7 +16,7 @@ const MyCollages = () => {
     const handleFeedback = () => {
         const review = { name: user?.displayName, feedback: feedback, image: user?.photoURL, ratings: rating }
         // console.log(review);
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://collage-server-two.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const MyCollages = () => {
             })
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/applications?email=${user?.email}`)
+        fetch(`https://collage-server-two.vercel.app/applications?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setApplications(data);
@@ -58,7 +58,7 @@ const MyCollages = () => {
             ) : (
                 // Otherwise, show the collage information and feedback section
                 <div>
-                    <h2 className='text-3xl font-mono text-center my-3'>My Collage</h2>
+                    {/* <h2 className='text-3xl font-mono text-center my-3'>My Collage</h2> */}
                     <div>
                         <img className='mx-auto rounded-lg' src={collageInfo?.image} alt="Collage Image" />
                     </div>

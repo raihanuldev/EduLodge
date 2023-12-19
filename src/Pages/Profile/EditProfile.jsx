@@ -22,7 +22,7 @@ const EditProfile = () => {
             university: data.university || profile.university,
         };
         // Send PUT request to update the user profile
-        fetch(`http://localhost:5000/user/${profile._id}`, {
+        fetch(`https://collage-server-two.vercel.app/user/${profile._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const EditProfile = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        fetch(`https://collage-server-two.vercel.app/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
