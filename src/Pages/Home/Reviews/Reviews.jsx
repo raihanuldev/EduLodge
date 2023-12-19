@@ -16,11 +16,11 @@ const Reviews = () => {
         return <p>loading</p>
     }
     return (
-        <div className='px-5'>
+        <div className='px-5 py-2'>
             <h2 className='text-4xl text-center font-serif font-semibold my-2'>Our Feedback</h2>
             <div className='grid sm:mx-auto md:grid-cols-3 gap-2 '>
                 {
-                    reviews.map((review,index)=> <ReviewCard key={index} review={review}></ReviewCard>)
+                    reviews.slice(0,6).map((review,index)=> <ReviewCard key={index} review={review}></ReviewCard>)
                 }
             </div>
         </div>
