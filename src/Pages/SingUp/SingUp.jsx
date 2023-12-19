@@ -19,7 +19,7 @@ const SingUp = () => {
             userProfileUpdate(data.name,data.photo)
             .then(()=>{
                 const user = {name:data.name,address:'',university:'', email:data.email, photoUrl: data.photo,password: data.password,firebase:result.user.metadata}
-                fetch('https://collage-server-two.vercel.app/users',{
+                fetch('http://localhost:5000/users',{
                             method:'post',
                             headers:{
                                 'content-type':'application/json'

@@ -17,7 +17,7 @@ const Apply = () => {
     const onSubmit =(data)=>{
         const application = {collageId:id, collageInfo:collage, name:data.names,address:data.address,photo:data.photo, birth:data.birthdate, subject:data.subject,email:data.email,phone:data.phone};
         // console.log(application);
-        fetch('https://collage-server-two.vercel.app/admissions',{
+        fetch('http://localhost:5000/admissions',{
             method: "POST",
             headers:{
                 'content-type':'application/json'

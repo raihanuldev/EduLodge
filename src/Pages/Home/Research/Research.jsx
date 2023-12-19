@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Research = () => {
     const [papers, setPaper] = useState([]);
     useEffect(() => {
-        fetch('https://collage-server-two.vercel.app/research-papers')
+        fetch('http://localhost:5000/research-papers')
             .then(res => res.json())
             .then(data => {
                 setPaper(data)

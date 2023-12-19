@@ -15,7 +15,7 @@ const Profile = () => {
 
 
     useEffect(() => {
-        fetch(`https://collage-server-two.vercel.app/user?email=${user?.email}`)
+        fetch(`http://localhost:5000/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
